@@ -1,10 +1,30 @@
-import { init, requestFullscreen } from '@telegram-apps/sdk';
+import { miniApp, viewport } from '@telegram-apps/sdk';
 
-function App() {
+async function App() {
   
-  init();
+  if (miniApp.mountSync.isAvailable()) {
+    miniApp.mountSync();
+    miniApp.isMounted(); // true
+  }
 
-  requestFullscreen(); 
+  if (viewport.mount.isAvailable()) {
+    try {
+      const promise = viewport.mount();
+      viewport.isMounting(); // true
+      await promise;
+      viewport.isMounting(); // false
+      viewport.isMounted(); // true
+    } catch (err) {
+      viewport.mountError(); // equals "err"
+      viewport.isMounting(); // false
+      viewport.isMounted(); // false
+    }
+  }
+
+  if (viewport.requestFullscreen.isAvailable()) {
+    await viewport.requestFullscreen();
+    viewport.isFullscreen(); // true
+  }
 
   return (
     <>
