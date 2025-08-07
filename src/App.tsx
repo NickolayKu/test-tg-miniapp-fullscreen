@@ -15,6 +15,17 @@ function App() {
           await promise;
           viewport.isMounting(); // false
           viewport.isMounted(); // true
+
+          viewport.safeAreaInsetTop();
+          viewport.safeAreaInsetBottom();
+          viewport.safeAreaInsetLeft();
+          viewport.safeAreaInsetRight();
+
+          viewport.contentSafeAreaInsetTop();
+          viewport.contentSafeAreaInsetBottom();
+          viewport.contentSafeAreaInsetLeft();
+          viewport.contentSafeAreaInsetRight();
+
         } catch (err) {
           viewport.mountError(); // equals "err"
           viewport.isMounting(); // false
