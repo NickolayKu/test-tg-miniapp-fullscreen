@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { init, requestFullscreen } from '@telegram-apps/sdk';
 
 function App() {
