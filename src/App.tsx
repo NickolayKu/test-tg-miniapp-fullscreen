@@ -1,16 +1,11 @@
 import { useEffect } from 'react';
+import { init, requestFullscreen } from '@telegram-apps/sdk';
 
 function App() {
   
-  const tg = window.Telegram.WebApp;
+  init();
 
-  useEffect(() => {
-    if (tg) {
-      tg.ready();
-      tg.requestFullscreen();
-      tg.isFullscreen(true);
-    }
-  }, [tg]);
+  requestFullscreen(); 
 
   return (
     <>

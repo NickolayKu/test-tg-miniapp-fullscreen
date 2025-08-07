@@ -286,7 +286,7 @@
   var WebApp = {};
   var webAppInitData = '', webAppInitDataUnsafe = {};
   var themeParams = {}, colorScheme = 'light';
-  var webAppVersion = '6.0';
+  var webAppVersion = '9.1';
   var webAppPlatform = 'unknown';
   var webAppIsActive = true;
   var webAppIsFullscreen = false;
