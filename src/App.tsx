@@ -34,7 +34,7 @@ function App() {
 
   return (
     <>
-      <div style={{backgroundColor: 'blue', width: '100%', height: '100%'}}>    
+      <div id='block'>
         Click on the Vite and React logos to learn more
       </div>
     </>
